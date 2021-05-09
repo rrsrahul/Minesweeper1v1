@@ -9,7 +9,8 @@ document.write("welcome to Javatpoint");
 
 function generateGrid() {
   //generate 10 by 10 grid
-  var grid = document.getElementById("grid");
+  grid = document.getElementById("grid");
+  console.log(testMode);
   grid.innerHTML="";
   for (var i=0; i<10; i++) {
     row = grid.insertRow(i);
@@ -87,4 +88,23 @@ function clickCell(cell) {
     }
     checkLevelCompletion();
   }
+}
+
+function init()
+{
+ let columns = 5;
+ let rows = 4;
+ const tile =[];
+ for(let i =0;i<rows*columns;i++)
+ {
+  tile[i] = document.createElement('img');
+  tile[i].src = "x.png"
+  document.body.appendChild(tile[i]); 
+  if((i+1)%columns===0)
+  {
+    console.log('inserted br')
+    document.body.appendChild(document.createElement("BR"))
+  }
+  
+ }
 }

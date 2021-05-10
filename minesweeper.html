@@ -9,11 +9,12 @@ function check(x1, y1)        // this function returns the value of the tile usi
         }
 
 
-function picture(index)        // This function returns the name of the image of the tile (uncovered/flag/question mark).
-                        // To be more precise, it returns the last but four letter of the filename of the image.
-                        // It would be more elegant if we created a separate array to indicate it, but I chose this clunky way to shorten the code a bit.
+function picture(index)        
         {
         return tile[index].src.substr(tile[index].src.length-5,1);
+        // This function returns the name of the image of the tile (uncovered/flag/question mark)
+        // To be more precise, it returns the last but four letter of the filename of the image               
+        // It would be more elegant if we created a separate array to indicate it, but I chose this clunky way to shorten the code a bit.
         }
 
 function init()        // initialize the board

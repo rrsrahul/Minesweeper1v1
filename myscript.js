@@ -4,7 +4,7 @@ var testMode = false; //Turn this variable to true to see where the mines are
 
 function myfunction()   
  {   
-document.write("welcome to Javatpoint");  
+console.log("welcome to JavaScript");  
          }  
 
 function generateGrid() {
@@ -16,7 +16,9 @@ function generateGrid() {
     row = grid.insertRow(i);
     for (var j=0; j<10; j++) {
       cell = row.insertCell(j);
+      //cell.onmousedown = function() { myfunction() }
       cell.onclick = function() { clickCell(this); };
+      console.log(cell);
       var mine = document.createAttribute("data-mine");       
       mine.value = "false";             
       cell.setAttributeNode(mine);

@@ -16,6 +16,9 @@ function generateGrid() {
     row = grid.insertRow(i);
     for (var j=0; j<10; j++) {
       cell = row.insertCell(j);
+      //var img = document.createElement('img');
+      //img.src = 'x.png'
+      //cell = cell.appendChild(img);
       //cell.onmousedown = function() { myfunction() }
       cell.onclick = function() { clickCell(this); };
       console.log(cell);

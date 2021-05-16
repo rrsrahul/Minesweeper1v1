@@ -103,7 +103,7 @@ function init()
  for(let i =0;i<rows*columns;i++)
  {
   tile[i] = document.createElement('img');
-  tile[i].src = "x.png"
+  tile[i].src = "assets/x.png"
   document.body.appendChild(tile[i]); 
   if((i+1)%columns===0)
   {

@@ -29,7 +29,7 @@ function init()        // initialize the board
         for (i=0;i<rows*columns;i++) // Create the tiles.
                 {
                 tile[i] =document.createElement('img');        // Each tile is an HTML image.
-                tile[i].src="x.png";                        // Initial picture: uncovered tile.
+                tile[i].src="assets/x.png";                        // Initial picture: uncovered tile.
                 tile[i].style="position:absolute;height:30px; width: 30px";
                 tile[i].style.top=50+Math.floor(i/columns)*30;        // Place the tile vertically
                 tile[i].style.left=400+i%columns*30;                // and horizontally.
@@ -81,9 +81,9 @@ function click(event)
                 {
                 switch(picture(id))
                         {
-                        case 'x':tile[id].src='f.png';remaining--; break;         // If the tile is uncovered, set a flag.
-                        case 'f':tile[id].src='q.png';remaining++; break;         // If it's a flag, set a question mark.
-                        case 'q':tile[id].src='x.png';break;                        // If it's a question mark, set it to uncovered.
+                        case 'x':tile[id].src='assets/f.png';remaining--; break;         // If the tile is uncovered, set a flag.
+                        case 'f':tile[id].src='assets/q.png';remaining++; break;         // If it's a flag, set a question mark.
+                        case 'q':tile[id].src='assets/x.png';break;                        // If it's a question mark, set it to uncovered.
                         }
                 event.preventDefault();
                 }
@@ -96,8 +96,8 @@ function click(event)
                         {
                         for (i=0;i<rows*columns;i++)
                                 {
-                                if(board[i]=='mine') tile[i].src="m.png";        // show all the mines,
-                                if(board[i]!='mine'&&picture(i)=='f') tile[i].src="e.png";        // show a strike-through mine where flags were placed incorrectly.
+                                if(board[i]=='mine') tile[i].src="assets/m.png";        // show all the mines,
+                                if(board[i]!='mine'&&picture(i)=='f') tile[i].src="assets/e.png";        // show a strike-through mine where flags were placed incorrectly.
                                 }
 
                         document.getElementById('status').innerHTML='GAME OVER<br><br>Click here to restart';
@@ -116,7 +116,7 @@ function reveal(index)        // Uncover the tile
         {
         if(board[index]!='mine'&&picture(index)=="x")        // If it's covered and not a mine:
                 revealed++;                 // If it was uncovered, increase the count of revealed tiles.
-                tile[index].src=board[index]+".png";        // Uncover the tile.
+                tile[index].src="assets/" + board[index]+".png";        // Uncover the tile.
 
                 var x=index%columns;        // Convert index into (x,y) coordinates.
                 var y=Math.floor(index/columns);
